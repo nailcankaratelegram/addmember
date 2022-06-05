@@ -130,3 +130,4 @@ for account in accounts:
     phone = account['phone']
     print(phone)
     get_group(phone, api_id, api_hash)
+    break
