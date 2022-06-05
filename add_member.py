@@ -122,7 +122,7 @@ while i < total_user:
     # count_add if added 35 user
     if count_add % (35 * total_client) == (35 * total_client - 1):
         print('sleep 15 minute')
-        time.sleep(15 * 60)
+        time.sleep(15)
 
     total_client = filter_clients.__len__()
     print("remain client: " + str(total_client))
@@ -141,6 +141,7 @@ while i < total_user:
     user = current_client['users'][i]
 
     if user['username'] in triedusers:
+      i += 1
       continue
 
     triedusers = np.append(triedusers,user['username'])
@@ -160,7 +161,7 @@ while i < total_user:
         print('Added member '+ user['username'] +' successfully ;-)')
         count_add += 1
         print('sleep: ' + str(120 / total_client))
-        time.sleep(120 / total_client)
+        time.sleep(15)
 
     except PeerFloodError as e:
         print("Error Fooling cmnr")
