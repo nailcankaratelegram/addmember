@@ -161,14 +161,14 @@ while i < total_user:
         print('Added member '+ user['username'] +' successfully ;-)')
         count_add += 1
         print('sleep: ' + str(120 / total_client))
-        time.sleep(15)
+        time.sleep(3)
 
     except PeerFloodError as e:
         print("Error Fooling cmnr")
         traceback.print_exc()
         print("remove client: " + current_client['phone'])
-        client.disconnect()
-        filter_clients.remove(current_client)
+        #client.disconnect()
+        #filter_clients.remove(current_client)
 
         # not increate i
         continue
